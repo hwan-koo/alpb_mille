@@ -1,14 +1,22 @@
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
+import { DEV_SERVER_URL } from "@/lib/constants/urls";
+import { SERVICE_DESCRIPTION, SERVICE_NAME } from "@/lib/constants/strings";
+import Script from "next/script";
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+// const defaultUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+//   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+//   : DEV_SERVER_URL;
+const defaultUrl = DEV_SERVER_URL;
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: {
+    template: `%s | ${SERVICE_NAME}`,
+    default: SERVICE_NAME,
+  },
+
+  description: SERVICE_DESCRIPTION,
 };
 
 export default function RootLayout({
@@ -18,10 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="bg-background text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
-          {children}
-        </main>
+      <body className="mx-auto min-h-screen max-w-screen-sm break-keep border-[1px] border-gray-20 antialiased p-6">
+        {children}
+        <div id="portal" />
       </body>
     </html>
   );

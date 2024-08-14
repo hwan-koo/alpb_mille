@@ -10,12 +10,15 @@ export default function Login({
 }) {
   return (
     <div className="col-span-4 flex flex-col justify-center gap-4">
-      <h1 className="mb-14 self-center text-center text-xl font-semibold">
+      <h1 className="mt-20 text-2xl text-center font-bold text-black">
         {LOGIN_TITLE}
       </h1>
+      <p className="text-gray-500 text-center">
+        18만 권 속에서 인생책을 찾아보세요
+      </p>
 
       <OAuthButton
-        className="bg-kakao-background hover:bg-kakao-background-hover mt-28 rounded-lg py-4 text-black"
+        className="bg-[#FFEB60] hover:bg-kakao-background-hover mt-20 rounded-lg py-4 text-black"
         provider="kakao"
         icon={<KakaoIcon />}
         buttonText="카카오 로그인"
