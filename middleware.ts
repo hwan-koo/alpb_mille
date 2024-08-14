@@ -19,7 +19,7 @@ export async function middleware(request: NextRequest) {
     }
   } else {
     if (exists) {
-      console.log(1);
+      console.log("login exists");
       return NextResponse.redirect(new URL("/voca", request.url));
     }
   }
