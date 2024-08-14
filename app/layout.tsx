@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="mx-auto min-h-screen max-w-screen-sm break-keep border-[1px] border-gray-20 antialiased p-6">
+      <body className="mx-auto min-h-screen min-w-screen-mobile max-w-screen-sm break-keep border-[1px] border-gray-20 antialiased p-6">
         {children}
         <div id="portal" />
       </body>
