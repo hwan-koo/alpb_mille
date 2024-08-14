@@ -1,8 +1,29 @@
-import { type NextRequest } from "next/server";
-import { updateSession } from "@/utils/supabase/middleware";
+import { NextResponse, type NextRequest } from "next/server";
+import getUser from "./utils/supabase/getUser";
+
+interface Routes {
+  [key: string]: boolean;
+}
+
+const publicOnlyUrls: Routes = {
+  "/": true,
+};
 
 export async function middleware(request: NextRequest) {
-  return await updateSession(request);
+  const user = await getUser({ isRedirectedIfNoUser: false });
+  const exists = publicOnlyUrls[request.nextUrl.pathname];
+
+  if (!user) {
+    if (exists) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+  } else {
+    if (exists) {
+      console.log(1);
+      return NextResponse.redirect(new URL("/voca", request.url));
+    }
+  }
+  return;
 }
 
 export const config = {
