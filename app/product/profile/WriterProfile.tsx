@@ -1,14 +1,17 @@
 import Image from "next/image";
+import { updateProfile } from "./action";
 
 export default function WriterProfile({
   name,
   profile_url,
+  introduction,
 }: {
   name: string;
   profile_url: string;
+  introduction: string;
 }) {
   return (
-    <form>
+    <form action={updateProfile}>
       <h1 className="font-bold">
         활동하실 필명과 프로필 이미지를 확인해주세요
       </h1>
@@ -30,6 +33,8 @@ export default function WriterProfile({
         title="작가 소개"
         maxLength={200}
         minLength={1}
+        defaultValue={introduction}
+        name="introduction"
         // onChange={(e) => setIntroduction(e.target.value)}
       ></textarea>
       {/* <p className="text-right text-xs text-gray-400">
