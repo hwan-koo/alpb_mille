@@ -47,9 +47,7 @@ export default async function ProtectedPage() {
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"
-          >
-            Supabase
-          </a>
+          ></a>
         </p>
       </footer>
     </div>

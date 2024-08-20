@@ -3,6 +3,7 @@ import "./globals.css";
 import { DEV_SERVER_URL } from "@/lib/constants/urls";
 import { SERVICE_DESCRIPTION, SERVICE_NAME } from "@/lib/constants/strings";
 import Script from "next/script";
+import BottomNavigation from "@/components/BottomNavigation/BottomNavigation";
 
 // const defaultUrl = process.env.NEXT_PUBLIC_VERCEL_URL
 //   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
@@ -26,9 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="mx-auto min-h-screen min-w-screen-mobile max-w-screen-sm break-keep border-[1px] border-gray-20 antialiased p-6">
+      <body className="mx-auto min-h-screen min-w-screen-mobile max-w-screen-sm break-keep border-[1px] border-gray-20 antialiased ">
         {children}
         <div id="portal" />
+        <BottomNavigation />
       </body>
     </html>
   );
