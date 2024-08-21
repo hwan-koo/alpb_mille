@@ -13,3 +13,15 @@
 body {
   font-family: "Pretendard Variable";
 }
+
+@layer components {
+  .modalFloatingBtnPositon {
+    top: calc(50vh + 126px);
+  }
+  .modalFloatingBtnWidth {
+    width: calc(100% - 40px);
+  }
+  .FloatingBtnWidth {
+    right: calc((100% - 640px) * 1 / 2);
+  }
+}

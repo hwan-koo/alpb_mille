@@ -11,7 +11,6 @@ export async function updateProfile(formData: FormData) {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
-  console.log(formData.get("introduction"));
   const { error, data }: any = await supabase.from("writer").upsert(
     {
       name: user?.user_metadata.full_name,
