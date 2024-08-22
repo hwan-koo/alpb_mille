@@ -1,7 +1,7 @@
 import getUser from "@/utils/supabase/getUser";
 import { createClient } from "@supabase/supabase-js";
 
-export async function getDetailPost() {
+export async function getDetailPost({ postId }: any) {
   const user = await getUser();
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -11,7 +11,8 @@ export async function getDetailPost() {
     .from("Post")
     .select(
       "id, title, sub_title, cover_img_timestamp, category, user_id, created_at, edited_at, recommendation, views, content, introduction, writer(id, name, introduction,user_id, profile_url)"
-    );
+    )
+    .eq("cover_img_timestamp", postId);
   console.log(data, error);
   return [data, user?.id];
 }
