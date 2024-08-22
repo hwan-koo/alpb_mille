@@ -27,7 +27,10 @@ export default function PostItem({
           >
             <Image
               src={
-                COVERIMAGE_BASE_URL + userId + "/" + post.cover_img_timestamp
+                COVERIMAGE_BASE_URL +
+                post.writer.user_id +
+                "/" +
+                post.cover_img_timestamp
               }
               alt=""
               width={100}
