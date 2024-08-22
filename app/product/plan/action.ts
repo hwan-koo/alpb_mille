@@ -108,6 +108,7 @@ export async function generateImage({
     size: "1024x1792",
     response_format: "b64_json",
   });
+  console.log(response);
   const imageBinaryData = response.data[0].b64_json;
   const buffer = Buffer.from(imageBinaryData as any, "base64");
   const timeStamp = await uploadGeneratedImageToSupabase(

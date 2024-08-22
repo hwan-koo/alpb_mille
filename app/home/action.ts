@@ -12,6 +12,5 @@ export async function getAllPostsWithWriters() {
     .select(
       "id, title, sub_title, cover_img_timestamp, category, user_id, created_at, edited_at, recommendation, views, content, introduction, writer(id, name, introduction,user_id, profile_url)"
     );
-  console.log(data, error);
   return [data, user?.id];
 }
