@@ -19,7 +19,13 @@ export default function WriterProfile({
         ・ 회원정보 수정 시, 기존 활동 내역에 일괄 반영됩니다
       </p>
       <div className="flex flex-col mt-8 justify-center items-center ">
-        <Image src={profile_url} width={100} height={100} alt="f" />
+        <Image
+          src={profile_url}
+          width={100}
+          height={100}
+          alt="f"
+          className="rounded-full"
+        />
         <p>{name}</p>
       </div>
       <div className="mt-8">
@@ -35,11 +41,8 @@ export default function WriterProfile({
         minLength={1}
         defaultValue={introduction}
         name="introduction"
-        // onChange={(e) => setIntroduction(e.target.value)}
       ></textarea>
-      {/* <p className="text-right text-xs text-gray-400">
-          {introduction.length} / 200
-        </p> */}
+
       <button className="w-full bg-[#FAE65E]  rounded-md p-2 mt-4">
         저장하기
       </button>

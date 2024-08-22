@@ -1,11 +1,12 @@
 "use client";
 import PictureIcon from "@/components/icons/PictureIcon";
 import AppBar from "@/components/navbar/AppBar";
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import CoverChoiceModal from "./CoverChoiceModal";
 import Image from "next/image";
 import { makeProductPlan } from "./action";
 import { useFormState } from "react-dom";
+import Loading from "./loading";
 
 export default function PlanForm({ cover_images, user_id }: any) {
   const [show, setShow] = useState(false);
@@ -29,7 +30,7 @@ export default function PlanForm({ cover_images, user_id }: any) {
     setImageTimeStamp(timeStamp);
   };
   return (
-    <div>
+    <Suspense fallback={<Loading />}>
       <AppBar title="작품 기획안 작성" />
       <form action={dispatch} className="p-6 mb-24">
         <div>
@@ -175,6 +176,6 @@ export default function PlanForm({ cover_images, user_id }: any) {
         title={title}
         introduction={introduction}
       />
-    </div>
+    </Suspense>
   );
 }

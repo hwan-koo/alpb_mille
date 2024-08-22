@@ -3,6 +3,7 @@ import PostAddIcon from "@/components/icons/PostAddIcon";
 import CategoryTabs from "./CategoryTabs";
 import Link from "next/link";
 import { getAllPostsWithWriters } from "./action";
+import { Suspense } from "react";
 
 export default async function Home() {
   const data = await getAllPostsWithWriters();
@@ -20,7 +21,9 @@ export default async function Home() {
           <PostAddIcon />
         </Link>
       </div>
-      <CategoryTabs postData={postData} userId={userId} />
+      <Suspense>
+        <CategoryTabs postData={postData} userId={userId} />{" "}
+      </Suspense>
     </div>
   );
 }
