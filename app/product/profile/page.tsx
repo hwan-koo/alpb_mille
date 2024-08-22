@@ -12,7 +12,7 @@ export default async function Intro() {
         <WriterProfile
           name={name}
           profile_url={profile_url}
-          introduction={introduction + "test"}
+          introduction={introduction}
         />
       </div>
     </>

@@ -6,9 +6,14 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "**", // 모든 도메인을 허용
+        port: "",
       },
     ],
-    domains: ["t1.kakaocdn.net"],
+    domains: [
+      "t1.kakaocdn.net",
+      "https://veancltplpfxofuvdyav.supabase.co",
+      "img1.kakaocdn.net",
+    ],
   },
 };
 

@@ -21,8 +21,8 @@ export async function updateProfile(formData: FormData) {
     { onConflict: "user_id" }
   );
   console.log(error, data);
-  revalidatePath("/home");
-  redirect("/home");
+  revalidatePath("/product/plan");
+  redirect("/product/plan");
 }
 
 export async function fetchWriter() {

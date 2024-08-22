@@ -13,6 +13,10 @@
 body {
   font-family: "Pretendard Variable";
 }
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
 
 @layer components {
   .modalFloatingBtnPositon {

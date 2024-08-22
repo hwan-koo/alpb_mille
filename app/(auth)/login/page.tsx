@@ -9,7 +9,7 @@ export default function Login({
   searchParams: { message: string };
 }) {
   return (
-    <div className="col-span-4 flex flex-col justify-center gap-4">
+    <div className="col-span-4 flex flex-col justify-center gap-4 p-6">
       <h1 className="mt-20 text-2xl text-center font-bold text-black">
         {LOGIN_TITLE}
       </h1>

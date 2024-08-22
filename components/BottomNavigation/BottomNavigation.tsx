@@ -8,9 +8,9 @@ import MyPageIcon from "./MyPageIcon";
 export default function BottomNavigation() {
   const path = usePathname();
   return (
-    <footer className="fixed bottom-0 flex w-full max-w-screen-sm flex-row justify-center gap-8 border-t-[1px] border-[#D9DEE9] bg-white pt-3 mobile:gap-16 border-r-[1px] border-l-[1px] border-l-white">
+    <footer className="fixed bottom-0 flex w-full max-w-screen-sm flex-row justify-center gap-16 border-t-[1px] border-[#D9DEE9] bg-white pt-3  border-r-[1px] border-l-[1px] border-l-white">
       <Link href="/home" prefetch={true}>
-        <div className="mb-[27px] flex flex-col items-center gap-1.5">
+        <div className="mb-[27px] flex flex-col items-center gap-1.5 w-14">
           <FeedIcon selected={path != "/home" ? false : true} />
           <span
             className={`text-xs font-semibold ${
@@ -22,7 +22,7 @@ export default function BottomNavigation() {
         </div>
       </Link>
       <Link href="/mybooks" prefetch={true}>
-        <div className="mb-[27px] flex flex-col items-center gap-1.5">
+        <div className="mb-[27px] flex flex-col items-center gap-1.5 w-14">
           <MyBooksIcon selected={path != "/mybooks" ? false : true} />
           <span
             className={`text-xs font-semibold ${
@@ -34,7 +34,7 @@ export default function BottomNavigation() {
         </div>
       </Link>
       <Link href="/mypage" prefetch={true}>
-        <div className="mb-[27px] flex flex-col items-center gap-1.5">
+        <div className="mb-[27px] flex flex-col items-center gap-1.5 w-14">
           <MyPageIcon selected={path != "/mypage" ? false : true} />
           <span
             className={`text-xs font-semibold ${

@@ -17,6 +17,19 @@ module.exports = {
       screens: {
         mobile: "390px",
       },
+      animation: {
+        autoComplete: "autoComplete 2s ease infinite",
+      },
+      keyframes: {
+        autoComplete: {
+          "0%, 100%": {
+            fill: "black",
+          },
+          "50%": {
+            fill: "white",
+          },
+        },
+      },
       // screens: {
       //   "2xl": { max: "1535px" },
       //   // => @media (max-width: 1535px) { ... }
