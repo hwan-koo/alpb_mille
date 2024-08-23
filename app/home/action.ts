@@ -11,6 +11,7 @@ export async function getAllPostsWithWriters() {
     .from("Post")
     .select(
       "id, title, sub_title, cover_img_timestamp, category, user_id, created_at, edited_at, recommendation, views, content, introduction, writer(id, name, introduction,user_id, profile_url)"
-    );
+    )
+    .order("id", { ascending: false });
   return [data, user?.id];
 }
