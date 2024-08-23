@@ -13,6 +13,7 @@ const nextConfig = {
       "t1.kakaocdn.net",
       "https://veancltplpfxofuvdyav.supabase.co",
       "img1.kakaocdn.net",
+      "k.kakaocdn.net",
     ],
   },
 };
