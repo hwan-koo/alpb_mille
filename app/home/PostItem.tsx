@@ -25,18 +25,20 @@ export default function PostItem({
             key={index}
             href={"/detail/" + post.cover_img_timestamp}
           >
-            <Image
-              src={
-                COVERIMAGE_BASE_URL +
-                post.writer.user_id +
-                "/" +
-                post.cover_img_timestamp
-              }
-              alt=""
-              width={100}
-              height={100}
-              className="w-28 h-40 border-[1px] border-gray-400 rounded-lg flex-shrink-0 "
-            />
+            {post.cover_img_timestamp ? (
+              <Image
+                src={
+                  COVERIMAGE_BASE_URL +
+                  post.writer.user_id +
+                  "/" +
+                  post.cover_img_timestamp
+                }
+                alt=""
+                width={100}
+                height={100}
+                className="w-28 h-40 border-[1px] border-gray-400 rounded-lg flex-shrink-0 "
+              />
+            ) : null}
             <div className="ml-4  flex flex-col justify-between">
               <div>
                 <div className="bg-[#FFEB60] w-[100px]  rounded-md px-1 py-[2px] flex flex-row items-center justify-center ">
@@ -49,13 +51,16 @@ export default function PostItem({
                 <h3 className="font-bold mt-1">{post.title}</h3>
                 <h4 className="text-sm text-gray-500">{post.sub_title}</h4>
                 <div className="flex flex-row items-center mt-1 ">
-                  <Image
-                    src={post.writer.profile_url}
-                    alt=""
-                    width={20}
-                    height={20}
-                    className="rounded-full mr-2 w-4 h-4 "
-                  />
+                  {post.writer.profile_url ? (
+                    <Image
+                      src={post.writer.profile_url}
+                      alt=""
+                      width={20}
+                      height={20}
+                      className="rounded-full mr-2 w-4 h-4 "
+                    />
+                  ) : null}
+
                   <p className="text-gray-600 text-sm"> {post.writer.name}</p>
                 </div>
               </div>
